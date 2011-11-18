@@ -1,0 +1,31 @@
+Die erstellten PHP-Skripte laufen unter der Version 5.
+
+
+Die Haushalte in PDF und XLS werden im Verzeichnis pdfs abgelegt.
+
+Für Stadt Gießen in pdfs/GI/Stadt
+Dateien:
+684_7030_1.pdf
+684_7030_1_open.pdf
+684_7030_1_open.xls
+Entwurf_HH_Satzung_Plan_20111006_STV.pdf
+Entwurf_HH_Satzung_Plan_20111006_STV.xls
+
+
+Für den Main-Kinzig-Kreis in pdfs/MKK
+Dateien:
+Haushalt_2011.pdf
+Haushalt_2011_open.pdf
+Haushalt_2011_open.xls
+
+
+Die konvertierten Daten liegen dann in data.
+
+
+Zur Nutzung der Kolorierung per Adobe Kuler muss ein API-Key registiert werden:
+http://learn.adobe.com/wiki/display/kulerdev/A.+Kuler+API+Documentation
+
+Dieser ist in die Datei _kuler_load_color_scheme.ini einzutragen.
+
+Es wird das Image-PEAR-Paket zusätzlich benötigt.
+

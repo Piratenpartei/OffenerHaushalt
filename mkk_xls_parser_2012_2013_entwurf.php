@@ -11,7 +11,7 @@
 
 	// open file
 		echo "loading data\n";
-		$data->read('pdfs/MKK/Haushalt_2011_open.xls');
+		$data->read('pdfs/MKK/Haushaltsentwurf_2012_2013_open.xls');
 
 	// error reporting
 		error_reporting(E_ALL ^ E_NOTICE);
@@ -40,11 +40,11 @@
 			for ($i=1; $i<=$page['numRows']; $i++) {
 				// find basis info
 					if (
-						$page["cells"][$i][1] == "Dezernat"
+						$page["cells"][$i][2] == "Dezernat"
 						&&
-						$page["cells"][($i+1)][1] == "Fachbereich"
+						$page["cells"][($i+1)][2] == "Fachbereich"
 						&&
-						$page["cells"][($i+2)][1] == "Produkt"
+						$page["cells"][($i+2)][2] == "Produkt"
 					) {
 						// page
 							echo "\nPage ".$side."\n";
@@ -239,12 +239,13 @@
 		}
 
 		function checkPage(&$page, &$start, &$stop, &$amounts, &$sums, $side, $debug = false) {
-			$years = array("2011", "2010", "2009");
+			$years = array("2013", "2012", "2011", "2010");
 
 			for ($ii=1; $ii<=$page['numRows']; $ii++) {
 				foreach ($page['cells'][$ii] as $jj => $cell) {
 					#echo $cell."\n";
-					if (strpos($cell, "Ordentliche Aufwendun") !== false) {
+					#if (strpos($cell, "Ordentliche Aufwendungen") !== false) {
+					if (strpos($cell, "Ordentliche A") !== false) {
 						#print_r($page['cells'][$ii]);
 						$start = true;
 					}
@@ -300,9 +301,10 @@
 				$ret["data"] = array(
 								"page"	=>	$side,
 								"data"	=>	array(
-												"2009"	=>	0,
 												"2010"	=>	0,
 												"2011"	=>	0,
+												"2012"	=>	0,
+												"2013"	=>	0,
 											),
 								"short"	=>	$row[3],
 				);

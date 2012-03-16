@@ -24,7 +24,7 @@
 		$infos = unserialize($infos);
 
 		$pdf_link = "http://www.mkk.de/cms/media/pdf/ihr-kreis_1/haushalt/Haushaltsentwurf_20122013.pdf";
-		$years = array("2012", "2011", "2010");
+		$years = array("2013", "2012", "2011", "2010");
 
 	// basedata
 		$basedata = array(
@@ -111,7 +111,7 @@
 												$delimiter.
 											csvColor($color_1).
 												$delimiter.
-											csvText("Fehlende Beschreibung: Dezernat").
+											csvText("Fehlende Beschreibung: Dezernat<br /><br /><a href='javascript: history.go(-1)'>Zurück</a>").
 												$delimiter.
 											csvText($data["text"]).
 												$delimiter.
@@ -120,7 +120,7 @@
 												$delimiter.
 											csvColor($color_2).
 												$delimiter.
-											csvText("Fehlende Beschreibung: Fachbereich").
+											csvText("Fehlende Beschreibung: Fachbereich<br /><br /><a href='javascript: history.go(-1)'>Zurück</a>").
 												$delimiter.
 											csvText($data2["text"]).
 												$delimiter.
@@ -129,7 +129,7 @@
 												$delimiter.
 											csvColor($color_3).
 												$delimiter.
-											csvText("Fehlende Beschreibung: Produkt").
+											csvText("Fehlende Beschreibung: Produkt<br /><br /><a href='javascript: history.go(-1)'>Zurück</a>").
 												$delimiter.
 											csvText($data3["text"]).
 												$delimiter.
@@ -138,7 +138,7 @@
 												$delimiter.
 											csvColor($color_4).
 												$delimiter.
-											csvText("Link zur Seite im <a href='".$link."#page=".$page."'>Haushalts-PDF</a> (ab Seite ".$page.")").
+											csvText("Link zur Seite im <a href='".$link."#page=".$info["page"]."'>Haushalts-PDF</a> (ab Seite ".$info["page"].")<br /><br /><a href='javascript: history.go(-1)'>Zurück</a>").
 												$delimiter.
 											csvText($info["short"]).
 												$delimiter.
